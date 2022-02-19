@@ -1,7 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-// console.log(galleryItems);
 
 const galleryEl = document.querySelector('.gallery');
 const cardsMarkup = createImgCardsMakup(galleryItems);
@@ -23,10 +22,7 @@ function createImgCardsMakup(galleryImages) {
     }).join('');
 };
 
-// console.log("galleryEl", galleryEl);
-
-galleryEl.addEventListener('click', onImageClick)
-// console.log("galleryEl", galleryEl.classList);
+galleryEl.addEventListener('click', onImageClick);
 
 function onImageClick(event) {
     event.preventDefault();
@@ -45,9 +41,13 @@ function onImageClick(event) {
         return
     };
 
-    imageEl.dataset.source;
     console.log(imageEl.dataset.source);
-    
+
+
+    const instance = basicLightbox.create(`
+        <img src="${imageEl.dataset.source}">`
+    );
+
+    instance.show();
+
 };
-
-
