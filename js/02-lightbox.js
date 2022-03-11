@@ -16,12 +16,6 @@ function createImgCardsMakup(galleryImages) {
     }).join('');
 };
 
-galleryEl.addEventListener('click', onGalleryImageClick);
-
-function onGalleryImageClick(event) {
-    event.preventDefault();
-
-};
 
 var lightbox = new SimpleLightbox('.gallery a', {'captionsData': 'alt','captionDelay': 250 });
 
